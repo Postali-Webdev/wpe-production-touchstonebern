@@ -1,0 +1,412 @@
+/**
+ * Template Front Page Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+.home {
+    position: relative;
+    #banner {
+        padding-top: 0;
+        overflow-x: hidden;
+        .inner-wrapper {
+            max-width: 65%;
+            margin: 0 auto;
+            @include respond(desktop) {
+                max-width: 100%;
+            }
+        }
+        h1 {
+            margin-bottom: 25px !important;
+            @include respond(phone) {
+                text-align: center;
+            }
+        }
+        .large-title {
+            margin-bottom: 80px !important;
+            @include respond(phone) {
+                text-align: center;
+                margin-bottom: 40px !important;
+            }
+        }
+        & > .columns {
+            align-items: stretch !important;
+            @include respond(tab-land) {
+                flex-direction: column;
+            }
+            .banner-slider, .inner-slider, .slick-list, .slick-track {
+                height: 100%;
+            }
+        }
+        .column-50 {
+            &:first-of-type {
+                padding-top: 80px;
+                width: 50%;
+                @include respond(tab-land) {
+                    width: 100%;
+                    padding-bottom: 80px;
+                    padding-top: 40px;
+                }
+            }
+            &:last-of-type {
+                width: 45%;
+                @include respond(tab-land) {
+                    width: 100%;
+                }
+            }
+        }
+        .bordered-block {
+            border: solid 1px $white;
+            border-bottom: solid 5px $white;
+            padding: 30px 40px;
+            position: relative;
+            p {
+                margin-bottom: 10px !important;
+                @include respond(phone) {
+                    text-align: center;
+                }
+                &:not(.yellow-title) {
+                    margin-bottom: 30px !important;
+                    @include respond(phone) {
+                        margin-bottom: 0 !important;
+                    }
+                }
+                &.yellow-title {
+                    font-weight: $light !important;
+                    margin-bottom: 20px !important;
+                }
+            }
+            .btn {
+                position: absolute;
+                bottom: -20px;
+                @include respond(phone) {
+                    position: relative;
+                    bottom: -55px;
+                    margin: 0 auto;
+                    display: block;
+                    width: -webkit-fit-content;
+                    width: -moz-fit-content;
+                    width: fit-content;
+                }
+            }
+        }
+        .banner-slider {
+            position: relative;
+            width: 100%;
+            &.mobile-banner {
+                display: none;
+                img {
+                    max-height: 600px;
+                    -o-object-position: top;
+                       object-position: top;
+                    @include respond(phone) {
+                        max-height: 400px;
+                    }
+                }
+                @include respond(tab-land) {
+                    display: block;
+                }
+            }
+            &.desktop-banner {
+                @include respond(tab-land) {
+                    display: none;
+                }
+            }
+            .inner-slider {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    -o-object-fit: cover;
+                       object-fit: cover;
+                    -o-object-position: left;
+                       object-position: left;
+                }
+            }
+            .slider-nav {
+                position: absolute;
+                bottom: 30px;
+                left: 40%;
+                background: $white;
+                padding: 0;
+                max-width: 320px;
+                text-transform: uppercase;
+                @include respond(desktop) {
+                    left: 30%;
+                }
+                @include respond(tab-land) {
+                    left: calc(50% - 150px);
+                }
+                p {
+                    color: $blk;
+                    font-size: 1rem;
+                    text-align: center;
+                    margin-bottom: 0 !important;
+                    line-height: 120%;
+                    padding: 5px;
+                }
+                .slick-dots {
+                    top: -25px;
+                    right: -95px;
+                    li {
+                        background: $white;
+                        opacity: 0.5;
+                        height: 10px;
+                        pointer-events: none;
+                        &.slick-active {
+                            opacity: 1;
+                        }
+                        button {
+                            &::before {
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #about {
+        @include respond(tab-land) {
+            padding-top: 0 !important;
+        }
+        h2 {
+            text-align: center;
+        }
+        .highlights-block {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 80px 0 160px 0;
+            @include respond(tab-land) {
+                grid-template-columns: 1fr;
+                margin: 40px 0 80px 0;
+            }
+            .highlight {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background: $dk-blue;
+                padding: 30px 20px;
+                min-height: 250px;
+                p {
+                    &.number {
+                        color: $yellow;
+                        font-size: 3rem;
+                        margin-bottom: 0px !important;
+
+                    }
+                }
+                h3 {
+                    font-size: 1.25rem;
+                    margin-bottom: 30px;
+                    @include respond(phone) {
+                        margin-bottom: 15px !important;
+                    }
+                }
+            }
+        }
+        .history {
+            align-items: center;
+            @include respond(tab-port) {
+                flex-direction: column-reverse;
+            }
+            &.wrapper {
+                margin: 0 auto 160px auto;
+                @include respond(tab-port) {
+                    margin: 0 auto 80px auto;
+                }
+            }
+            .column-50 {
+                &:last-of-type {
+                    @include respond(tab-port) {
+                        margin-bottom: 80px;
+                    }
+                }
+            }
+            .white-block {
+                background: $white;
+                padding: 30px 50px;
+                @include respond(phone) {
+                    padding: 25px;
+                }
+                p {
+                    margin-bottom: 80px !important;
+                    @include respond(tab-land) {
+                        margin-bottom: 40px !important;
+                        font-size: 1.2rem;
+                    }
+                    @include respond(tab-port) {
+                        font-size: 1.5rem;
+                    }
+                    @include respond(phone) {
+                        margin-bottom: 40px !important;
+                    }
+                }
+        
+                .awards-list {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 20px;
+                }
+            }
+        }
+        .reasons {
+            @include respond(desktop-lg) {
+                .column-25 {
+                    width: 30%;
+                }
+                .column-75 {
+                    width: 60%;
+                }
+            }
+            @include respond(desktop) {
+                flex-direction: column;
+                .column-25, .column-75 {
+                    width: 100%;
+                }
+                .column-25 {
+                    margin-bottom: 80px;
+                }
+            }
+            .reasons-list {
+                display: flex;
+                justify-content: flex-start;
+                align-items: space-between;
+                gap: 30px;
+                margin-top: 65px;
+                @include respond(desktop) {
+                    margin-top: 0;
+                    justify-content: space-between;
+                }
+                @include respond(phone) {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 80px;
+                    gap: 0px;
+                }
+                .reason {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: solid 1px $white;
+                    border-bottom: solid 5px $white;
+                    padding: 20px;
+                    width: 225px;
+                    height: 125px;
+                    position: relative;
+
+                    &:nth-of-type(2) {
+                        top: 140px;
+                    }
+                    &:nth-of-type(3) {
+                        top: 280px;
+                    }
+                    @include respond(desktop) {
+                        &:nth-of-type(2) {
+                            top: 30px
+                        }
+
+                        &:nth-of-type(3) {
+                            top: 60px;
+                        }
+                    }
+                    p {
+                        text-align: center;
+                        font-size: 1.5rem;
+                        line-height: 140%;
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    #attorneys {
+        h2 {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 60px;
+            @include respond(phone) {
+                text-align: left;
+            }
+        }
+        .attorney-list {
+            @include attorney-cards();
+        }
+        .all-attorney-link {
+            display: block;
+            text-align: center;
+            margin: 50px auto 0 auto !important;
+            color: $lt-blue;
+            font-size: 1.1rem;
+            font-weight: $medium !important;
+            letter-spacing: 1.5px;
+            text-decoration: underline;
+            text-transform: uppercase;
+            transition: $trans;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    #services {
+        .inner-wrapper {
+            max-width: 900px;
+            margin: 0 auto 80px auto !important;
+            text-align: center;
+        }
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            @include respond(tab-port) {
+                display: block;
+            }
+            .service-block {
+                border: solid 1px $white;
+                border-bottom: solid 10px $white;
+                padding: 30px;
+                position: relative;
+                margin-bottom: 30px;
+                @include respond(tab-port) {
+                    margin-bottom: 80px;
+                }
+                &:nth-of-type(1) {
+                    grid-column: span 2/3;
+                }
+                .btn {
+                    position: absolute;
+                    bottom: -30px;
+                }
+            }
+            ul {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+                @include respond(desktop) {
+                    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+                }
+                @include respond(tab-land) {
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                }
+                @include respond(tab-port) {
+                    grid-template-columns: 1fr;
+                }
+                li {
+                    white-space: break-spaces;
+                    text-wrap: wrap;
+                }
+            }
+        }
+    }
+
+    #join {
+        @include join-block();
+    }
+}

@@ -1,0 +1,187 @@
+/**
+ * Web Font Styles, H Styles, Body Text Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+/* Fonts */
+html, body {
+    font-size: 16px !important;
+    background-color: $blue !important;
+}
+body, h1, h2, h3, h4, h5, h6, p, a, ul {
+    // color: $body-text-color;
+} 
+p, a, ul, ol {
+
+}
+
+ul li, ol li {
+    margin: 0 0 0 20px;
+    font-size: 18px;
+}
+dl, blockquote, img {
+
+}
+
+
+h1, h2, h4, p, li, a:not(.btn):not(.custom-logo-link):not(.social-icon):not(.site-link):not(.page-numbers), span {
+    font-family: $montserrat;
+    font-weight: $normal !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, a:not(.btn):not(.custom-logo-link):not(.social-icon):not(.site-link):not(.page-numbers) {
+    margin-bottom: 25px !important;
+}
+
+a {
+    color: $white;
+    text-decoration: underline !important;
+}
+
+h1 {
+    color: $white;
+    font-size: 3rem;
+    text-transform: capitalize;
+    line-height: 120%;
+    &.blue-header {
+        font-size: 1.1rem;
+        color: $lt-blue;
+        text-transform: uppercase;
+        @include respond(phone) {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.large-title {
+    font-size: 3rem;
+    color: $white;
+    line-height: 120%;
+    @include respond(phone) {
+        font-size: 2.2rem;
+    }
+}
+
+.sm-title {
+    font-size: 1rem;
+    font-weight: $medium !important;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    margin-bottom: 5px !important;
+}
+
+.yellow-title {
+    color: $yellow;
+    font-family: $quicksand;
+    font-size: 1.5rem;
+    line-height: 125%;
+    font-weight: $medium !important;
+    @include respond(phone) {
+        font-size: 1.4rem;
+    }
+}
+
+.orange-title {
+    color: $orange;
+    font-size: 1.5rem;
+    font-weight: $medium !important;
+    line-height: 130%;
+    @include respond(phone) {
+        font-size: 1.15rem;
+    }
+}
+
+.blue-title {
+    color: $lt-blue;
+    font-size: 1.2rem;
+    font-weight: $medium !important;
+    letter-spacing: 1.5px;
+    line-height: 145%;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: $white;
+    font-size: 2.8rem;
+    line-height: 120%;
+    @include respond(phone) {
+        font-size: 2.2rem;
+    }
+}
+
+h3 {
+    font-family: $quicksand;
+    font-weight: $medium !important;
+    color: $yellow;
+    font-size: 1.8rem;
+}
+
+h4 {
+    color: $lt-blue;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 130%;
+    &.yellow {
+        color: $yellow;
+    }
+}
+
+a {
+    text-decoration:none;
+    -webkit-transition:$trans;
+    transition:$trans;
+    &:hover {
+        // color:$lt-red;
+        text-decoration:none;
+    }
+}
+
+p {
+    color: $white;
+    font-size: 1rem;
+    line-height: 180%;
+}
+
+ul {
+    margin-bottom: 25px !important;
+    li {
+        color: $white;
+        font-size: 1rem;
+        line-height: 180%;
+        &::marker {
+            color: $yellow;
+        }
+    }
+}
+
+.btn {
+    display:inline-block;
+    padding: 12px 25px;
+    background: $gold-gradient;
+    color: $blk;
+    text-decoration:none !important;
+    transition:$trans;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    font-weight: $medium !important;
+    font-family: $montserrat;
+    transition: $trans;
+    &:hover {
+        text-decoration: underline;
+        color: $blk;
+        background: transparent linear-gradient(103deg, #F0B109 0%, #C77D06 3%, #FFBC0A 18%, #F5DA92 33%, #FFE5A0 46%, #FFBC0A 84%, #FAC22E 86%, #C17B1C 100%) 0% 0% no-repeat padding-box;
+    }
+    &.blue {
+        background: $lt-blue;
+        color: $dk-blue;
+        &:hover {
+            background: $dk-blue;
+            color: $white;
+        }
+    }
+}
+

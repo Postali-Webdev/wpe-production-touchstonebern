@@ -1,0 +1,475 @@
+
+// keyframes for desktop sub-nav
+
+@keyframes fadein{
+    0% { opacity:0; top:85px; }
+    100% { opacity:1; top:95px; }
+}
+
+@-webkit-keyframes fadein{
+    0% { opacity:0; top:85px; }
+    100% { opacity:1; top:95px; }
+}
+
+
+header {    
+    #header-top {
+        &_right {
+            &_menu {
+                #menu-main-menu {
+                    list-style-type: none;
+                    display: flex;
+                    padding-bottom:0 !important;
+                    align-items: center;
+                    margin-bottom: 0 !important;
+                    li {
+                        display: flex;
+                        margin-left: 15px;
+                        position: relative;
+                        height: auto;
+                        .accordion-toggle {
+                            display:none;
+                        }
+
+                        &:not(.menu-item-search) {
+                            &.disable {
+                                opacity: 0.5;
+                                pointer-events: none;
+                            }
+                        }
+
+                        // hover states to display sub-menu
+                        &:hover {
+                            & a {
+                                font-weight: $bold !important;
+                                text-decoration: none !important;
+                            }
+                        }
+                        &:hover,
+                        > a:focus,
+                        > a:focus-visible {
+                            .sub-menu {
+                                background-color: $white;
+                                display:block;
+                                z-index: 0;
+                                -webkit-animation: .3s ease 0s normal forwards 1 fadein;
+                                animation: .3s ease 0s normal forwards 1 fadein;
+                                li {
+                                    a {
+                                        //font-weight: $normal !important;
+                                    }
+                                    .sub-menu {
+                                        display:none;
+                                        position: absolute;
+                                        top: 0 !important;
+                                        margin-left: 100%;
+                                        &:hover {
+                                            display:block;
+                                        }
+                                        li {
+                                            &:hover {
+                                                & > a {
+                                                    color: $blk !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // active menu states for current page / current parent
+                        &.current-menu-parent,
+                        &.current-menu-item,
+                        &.current-page-ancestor {
+                            & > a {
+                                text-decoration: underline !important;
+                                font-weight: $bold !important;
+                            }
+                        }
+
+                        &.menu-item-has-children {
+                            &::after {
+                                content: "\ea50";
+                                font-family: $icomoon;
+                                position: absolute;
+                                font-size: 12px;
+                                top: 18px;
+                                right: 0px;
+                                height: 8px;
+                                z-index: 1;
+                                color: $blk;
+                                display: block;
+                                transform: rotate(180deg);
+                                @include respond(desktop-lg) {
+                                    right: -5px;
+                                }
+
+                                // @include respond(tab-land) {
+                                //     position: absolute;
+                                //     //bottom: 0;
+                                //     content: "";
+                                //     left: 30px;
+                                //     width: calc(100% - 60px);
+                                //     background: white;
+                                //     height: 1px;
+                                //     opacity: .2;
+                                // }
+                            }
+                        }
+
+                        &.nav-contact {
+                            margin:0 12px 0 30px;
+
+                            @include respond(desktop) {
+                                margin:0 10px 0 20px;
+                            }
+                            
+                            a {
+                                padding: 12px 40px !important;
+                                transition: 0.2s linear;
+                                border-radius: 10px;
+
+                                @include respond(desktop) {
+                                    padding:12px 35px !important;
+                                }
+    
+                                &::before {
+                                    display:none !important;
+                                }
+                            }
+                        }
+
+                        a {
+                            padding: 0px 15px;
+                            font-size: 1rem;
+                            font-weight:$normal;
+                            display: flex;
+                            align-items: center;
+                            z-index: 1;
+                            font-weight: $normal;
+                            color:$blk !important;
+                            text-decoration: none !important;
+                            text-transform: uppercase;
+                            font-family: $quicksand !important;
+                            margin-bottom: 0 !important;
+                            @include respond(desktop-lg) {
+                                font-size: 14px;
+                                padding: 0px 7px;
+                            }
+                            @include respond(desktop) {
+                                font-size: 13px;
+                            }
+
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                z-index: -1;
+                                left: 20px;
+                                right: 100%;
+                                bottom: 30px;
+                                background: $blk;
+                                height: 1px;
+                                transition-property: right;
+                                transition-duration: 0.3s;
+                                transition-timing-function: ease-out;
+                            }
+                        }
+
+                        .sub-menu {
+                            width: auto;
+                            white-space: nowrap;
+                            transition: $trans;
+                            position: absolute;
+                            overflow: visible;
+                            background: lightgray;
+                            z-index: 500;
+                            margin: 0;
+                            padding: 0;
+                            display: none;
+                            width: auto;
+                            padding:15px 0;
+                            @media screen and (min-width: 1024px) {
+                                top: 58px !important;
+                                min-width: 400px;
+                            }
+                            &:before {
+                                content: "";
+                                width: 100%;
+                                height: 50px;
+                                position: absolute;
+                                top: -30px;
+                                left: 0;
+                            }
+
+                            .child-close {
+                                display:none;
+                            }
+
+                            li {
+                                margin-left: 0;
+                                a {
+                                    width: 100%;
+                                    padding: 10px 25px;
+                                    font-weight: $normal !important;
+                                }
+                                &.current-menu-item {
+                                    & > a {
+                                        font-weight: $bold !important;
+                                    }
+                                }
+                                &:hover {
+                                    background: $blk;
+                                    transition: $trans;
+
+                                    @include respond(tab-port) {
+                                        background:none;
+                                    }
+
+                                    a {
+                                        font-weight: $bold !important;
+                                        background: $yellow;
+                                    }
+                                    
+                                    .sub-menu {
+                                        display:block;
+                                        margin-top: -10px;
+                                    }
+                                }
+                            }
+                        }
+                        @include nav-search-desktop;
+                        &.contact-btn-white, &.contact-btn-gold {
+                            &:hover {
+                                a {
+                                    text-decoration: underline !important;
+                                    font-weight: $normal !important;
+                                }
+                            }
+                            a {
+                                margin-bottom: 0 !important;
+                            }
+                        }
+                        &.contact-btn-white {
+                            border: solid 2px $blk;
+                            a {
+                                padding: 5px 20px !important;
+                            }
+                        }
+                        &.contact-btn-gold {
+                            a {
+                                padding: 7px 20px !important;
+                                background: $gold-gradient;
+                            }
+                            &:hover {
+                                a {
+                                    background: transparent linear-gradient(103deg, #F0B109 0%, #C77D06 3%, #FFBC0A 18%, #F5DA92 33%, #FFE5A0 46%, #FFBC0A 84%, #FAC22E 86%, #C17B1C 100%) 0% 0% no-repeat padding-box;
+                                }
+                            }
+                        }
+                        //nav searchbar
+                        .navbar-form-search {
+                            position: relative;
+                            z-index: 10;
+                    
+                            .icon-magnifying-glass:before,
+                            .icon-close-x:before {
+                                content: "";
+                                position: absolute;
+                                top: 9px;
+                                left: -9px;
+                                transition: 0.3s linear;
+                                -webkit-transition: 0.3s linear;
+                                z-index: 10;
+                                color: $blk !important;
+                                font-size: 20px;
+                                font-weight: $normal;
+                                width: 20px;
+                                height: 20px;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                
+                    
+                                @media screen and (max-width: $tab-land) {
+                                    left: 5px;
+                                    top: calc(50% - 10px);
+                                }
+                            }
+                    
+                            .icon-magnifying-glass:before {
+                                content: "";
+                                width: 20px;
+                                height: 20px;
+                                background-image: url('/wp-content/themes/postali-child/assets/img/icon-search.svg');
+                                filter: invert(1) !important;
+                            }
+                    
+                            .icon-close-x:before {
+                                background-image: url('/wp-content/themes/postali-child/assets/img/plus-icon.svg');
+                                filter: invert(0) !important;
+                            }
+                    
+                            .form-control {
+                                width: 175px;
+                                padding: 6px;
+                                font-size: 16px;
+                                border: 0;
+                                font-family: $montserrat;
+                    
+                                @media screen and (max-width:$tab-land) {
+                                    width: 100%;
+                                }
+                            }
+                    
+                            .btn {
+                                border: 0;
+                                background: transparent;
+                                font-size: 1.8rem;
+                                padding: 0;
+                                cursor: pointer;
+                    
+                                &:active,
+                                &:hover,
+                                &:focus {
+                                    color: #000;
+                                    outline: none;
+                                    box-shadow: none;
+                                }
+                    
+                                span {
+                                    color: $blk;
+                                    font-weight: bold;
+                                }
+                            }
+                    
+                            .btn-search {
+                                height: 40px;
+                                border-radius: 0 10px 10px 0;
+                                background: $white;
+                                padding: 8px;
+                                position: relative;
+                                top: 0;
+                                right: -5px;
+                    
+                                span {
+                                    color: $white;
+                                }
+                            }
+                    
+                            .search-form-container {
+                                text-align: right;
+                                position: absolute;
+                                width: 250px;
+                                overflow: hidden;
+                                background: $white;
+                                right: 11px;
+                                top: 0;
+                                z-index: 9;
+                                transition: all .3s ease-in-out;
+                                border-radius: 10px 0 0 10px;
+                    
+                                @media screen and (max-width:$tab-land) {
+                                    width: 100%;
+                                    left: 0;
+                                    right: auto;
+                                    top: 15px;
+                                    border-radius: 0;
+                                    background: $white;
+                                }
+                    
+                                &.hdn {
+                                    width: 0;
+                    
+                                    @media screen and (max-width:$tab-land) {
+                                        width: 100%;
+                                    }
+                    
+                                    &~.btn-search {
+                                        height: 39px;
+                                        border-radius: 0 10px 10px 0;
+                                        background: unset;
+                                        padding: 8px;
+                    
+                                        &:hover {
+                                            .icon-magnifying-glass:before {
+                                                color: $grey;
+                                            }
+                                        }
+                    
+                                        @media screen and (max-width:$tab-land) {
+                                            width: auto;
+                                            height: 35px;
+                                            background: $white;
+                                            padding: 8px;
+                                            position: absolute;
+                                            z-index: 80;
+                                            right: 0;
+                                            top: 20px;
+                                            width: 35px;
+                                            border-radius: 0;
+                                            border: solid 3px $white;
+                    
+                                            span {
+                                                color: $white !important;
+                                            }
+                    
+                                            .icon-magnifying-glass:before {
+                                                color: $blk;
+                                            }
+                                        }
+                    
+                                        span {
+                                            color: $blk;
+                                        }
+                                    }
+                                }
+                    
+                                .search-input-group {
+                                    width: 250px;
+                                    display: flex;
+                                    padding: 5px;
+                                    height: 30px;
+                    
+                                    @media screen and (max-width:$tab-land) {
+                                        width: 100%;
+                                    }
+                    
+                                    .form-group {
+                                        @media screen and (max-width:$tab-land) {
+                                            width: 100%;
+                                        }
+                                    }
+                    
+                                    .btn {
+                                        border: 0;
+                                        background: $grey;
+                                        font-size: 1.6rem;
+                                        padding: 4px 8px 0;
+                                        border-radius: 5px 0 0 5px;
+                                        height: 32px;
+                    
+                                        @media screen and (max-width:$tab-land) {
+                                            display: none;
+                                        }
+                    
+                                        span {
+                                            color: $white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #mobile-sub-close {
+                    display:none;
+                }
+
+                #header-top_mobile {
+                    display:none;
+                }
+            }
+        }
+    }
+}

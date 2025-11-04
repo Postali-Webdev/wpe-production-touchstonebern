@@ -1,0 +1,172 @@
+/**
+ * Sass variables and functions.
+ *
+ * @package Postali Child
+ * @author Postali LLC
+ */
+
+// Legacy Breakpoints
+// $screen-xxxl: 1920px;
+// $screen-xxl: 1640px;
+// $screen-xl: 1400px;
+// $screen-lg: 1200px;
+// $screen-ipad: 1024px;
+// $screen-md: 992px;
+// $screen-sm: 768px;
+// $screen-xs: 667px;
+// $screen-xxs: 480px;
+// $screen-xxxs: 360px;
+
+// Breakpoints
+$desktop-full: 1920px;
+$desktop-lg: 1400px;
+$desktop: 1200px;
+$tab-land: 1024px;
+$tab-port: 820px;
+$phone: 600px;
+
+// Containers
+$container-max-width: $desktop-lg;
+$container-padding:30px;
+
+// Transitions
+$transition-speed:.3s;
+$transition-fast:.3s ease-in-ease-out;
+$transition-slow:.5s ease-in-ease-out;
+
+// Core Colors
+$blk: #182133;
+
+$grey: #333C4E;
+$white: #FFFFFF;
+
+$dk-blue: #000931;
+$blue: #001748;
+$lt-blue: #88D5E6;
+$orange: #D97739;
+$yellow: #ffbc0a;
+$primary-off-white: #F5F9FC;
+$gold-gradient: transparent linear-gradient(107deg, #F0B109 0%, #C77D06 3%, #FFBC0A 23%, #F5DA92 49%, #FFBC0A 75%, #FAC22E 86%, #C17B1C 100%) 0% 0% no-repeat padding-box;
+
+
+
+// Link Attributes
+// $link-color: $lt-red;
+// $link-hover-color: $grey;
+$link-transition-speed: .15s;
+$trans: 0.3s linear;
+
+@font-face {
+    font-family: "Icomoon";
+    src: url('../fonts/icomoon/icomoon.woff2') format('woff2'),
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/montserrat-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/montserrat-italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/montserrat-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/montserrat-mediumitalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/montserrat-semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/montserrat-semibolditalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/montserrat-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/montserrat-bolditalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "Quicksand";
+    src: url('../fonts/quicksand/quicksand-light.woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Quicksand";
+    src: url('../fonts/quicksand/quicksand-regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Quicksand";
+    src: url('../fonts/quicksand/quicksand-medium.woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Quicksand";
+    src: url('../fonts/quicksand/quicksand-semibold.woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Quicksand";
+    src: url('../fonts/quicksand/quicksand-bold.woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Typography
+$quicksand: "Quicksand", sans-serif;
+$montserrat: "Montserrat", sans-serif;
+$icomoon: 'Icomoon';
+
+// $body-font-family: $overpass;
+// $body-text-color: $dk-blue;
+$body-line-height: 130%;
+
+// Font Weight
+$light: 300;
+$normal: 400;
+$medium: 500;
+$bold: 700; 
+$black: 900;

@@ -1,0 +1,147 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+footer {
+    & > .row-1 {
+        background: $white;
+        padding: 60px 0;
+        @include respond(phone) {
+            padding-bottom: 30px !important;
+        }
+        p, li, a {
+            color: $blk;
+        }
+        .footer-copy {
+            margin-bottom: 30px !important;
+            @include respond(tab-port) {
+                margin-bottom: 60px !important;
+            }
+        }
+        .logo {
+            img {
+                max-height: 65px;
+                max-width: 340px;
+                width: 100%;
+                object-fit: contain;
+                object-position: left;
+                margin-bottom: 30px;
+            }
+        }
+        #menu-footer-menu {
+            list-style-type: none !important;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0 0 30px 0 !important;
+            gap: 15px;
+            @include respond(tab-port) {
+                margin: 0 0 60px 0 !important;
+            }
+            @include respond(phone) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: flex-start;
+            }
+            li {
+                margin: 0;
+                a {
+                    font-family: $quicksand;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    text-decoration: underline;
+                    font-weight: $bold;
+                }
+            }
+        }
+        .contact {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            @include respond(tab-port) {
+                margin-bottom: 60px;
+            }
+            @include respond(phone) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            span {
+                padding-right: 5px;
+            }
+            a {
+                text-decoration: underline;
+            }
+        }
+        .column-25 {
+            .sm-title {
+                margin-bottom: 20px !important;
+                text-align: right;
+                @include respond(tab-port) {
+                    text-align: left;
+                }
+            }
+            .responsive-iframe {
+                margin-bottom: 20px;
+            }
+            .address {
+                text-align: right;
+                @include respond(tab-port) {
+                    text-align: left;
+                }
+            }
+            a {
+                text-align: right;
+                text-decoration: underline;
+                display: block;
+                width: 100%;
+                @include respond(tab-port) {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    & >.row-2 {
+        background: $dk-blue;
+        .columns {
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            gap: 30px;
+            .site-links {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+                a {
+                    color: $white;
+                    position: relative;
+                    font-family: $montserrat;
+                    font-size: 0.9rem;
+                    &:first-of-type {
+                        &:after {
+                            content: "|";
+                            position: relative;
+                            right: -10px;
+                            top: 0;
+                            font-size: 0.9rem;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sm-title {
+        font-weight: $bold !important;
+        @include respond(phone) {
+            margin-bottom: 20px !important;
+        }
+    }
+}
