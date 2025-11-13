@@ -61,10 +61,14 @@ $in_memoriam = get_field('in_memoriam');
                         <div class="line-filler"></div>
                     </div>
                     <div class="row-2 <?php echo $in_memoriam ? 'full-width' : ''; ?>">
-                        <?php the_field('experience_copy_block'); ?>
+                        <div class="column-75">
+                            <?php the_field('experience_copy_block'); ?>
+                        </div>
+                        <div class="column-25">
                         <?php if( !$in_memoriam ) : ?>
                             <a href="mailto:<?php echo $email; ?>" class="btn">Contact <?php echo get_field('first_name'); ?></a>
                         <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
