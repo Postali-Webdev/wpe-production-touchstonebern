@@ -19,7 +19,9 @@
                     </div>
                     <div class="row-2">
                         <p class="sm-title">Site Navigation</p>
+                        <nav role="navigation">
                         <?php wp_nav_menu( ['theme_location' => 'footer-nav'] ); ?>
+                        </nav>
                     </div>
                     <div class="row-3">
                         <p class="sm-title">Get in Touch</p>
